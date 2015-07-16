@@ -11,6 +11,10 @@ play(){
 }
 
 if [ -e list.dat ];then 
+    touch $1list.dat
+fi
+
+if [ -s list.dat ];then
     play $1
 else 
     ls > list.dat; sed -i "/list.dat/d" list.dat;
